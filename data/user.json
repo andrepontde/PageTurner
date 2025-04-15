@@ -1,0 +1,33 @@
+{
+  "user": {
+    "name": "André Pont",
+    "cart": [],
+    "rentedBooks": [],
+    "purchasedBooks": [
+      {
+        "id": "3oSqDwAAQBAJ",
+        "title": "Oliver Twist",
+        "author": "Charles Dickens",
+        "price": 15,
+        "img": "http://books.google.com/books/content?id=3oSqDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "type": "buy"
+      },
+      {
+        "id": "3oSqDwAAQBAJ",
+        "title": "Oliver Twist",
+        "author": "Charles Dickens",
+        "price": 6,
+        "img": "http://books.google.com/books/content?id=3oSqDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "type": "buy"
+      },
+      {
+        "id": "8rZCEQAAQBAJ",
+        "title": "A Portrait of the Artist as a Young Man",
+        "author": "James Joyce",
+        "price": 20,
+        "img": "http://books.google.com/books/content?id=8rZCEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        "type": "buy"
+      }
+    ]
+  }
+}
