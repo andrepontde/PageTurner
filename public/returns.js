@@ -4,7 +4,7 @@ async function fetchRentedBooks() {
   const rentedBooks = userData.user.rentedBooks || [];
   const rentedBooksDiv = document.getElementById('rentedBooks');
   rentedBooksDiv.innerHTML = rentedBooks.map(book => `
-    <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; display: inline-block; text-align: center;">
+    <div class="book">
       <img src="${book.img}" alt="${book.title}" style="width: 128px; height: 192px; object-fit: cover;">
       <h3>${book.title}</h3>
       <p>${book.author}</p>

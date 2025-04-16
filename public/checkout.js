@@ -1,9 +1,9 @@
 async function fetchCart() {
-  const response = await fetch('/api/user');
-  const user = await response.json();
-  const cartDiv = document.getElementById('cart');
-  cartDiv.innerHTML = user.user.cart.map(book => `
-    <div>
+	const response = await fetch('/api/user');
+	const user = await response.json();
+	const cartDiv = document.getElementById('cart');
+	cartDiv.innerHTML = user.user.cart.map(book => `
+    <div class="book">
       <h3>${book.title}</h3>
       <p>${book.author}</p>
       <p>$${book.price}</p>
@@ -12,13 +12,16 @@ async function fetchCart() {
 }
 
 async function checkout() {
-  await fetch('/api/checkout', { method: 'POST' });
-  alert('Checkout complete!');
-  fetchCart();
+	await fetch('/api/checkout', { method: 'POST' });
+	alert('Checkout complete!');
+	fetchCart();
 }
 
 function goToReturns() {
-  window.location.href = 'returns.html';
+	window.location.href = 'returns.html';
+}
+function goToIndex() {
+	window.location.href = 'index.html';
 }
 
 fetchCart();

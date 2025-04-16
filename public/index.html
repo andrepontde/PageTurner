@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Search</title>
-  <script defer src="index.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Book Search</title>
+	<script defer src="index.js"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>Book Search</h1>
-  <div id="books"></div>
-  <button onclick="goToCheckout()">Go to Checkout</button>
+	<h1>Book Search</h1>
+	<input type="text" id="searchInput" placeholder="Search for books">
+	<button onclick="searchBook()">Search books</button>
+	<br><br>
+	<!-- ['fiction', 'mystery', 'fantasy', 'romance', 'science', 'history', 'horror']; -->
+	<button onclick="fetchByGenre('fiction')">Fiction</button>
+	<button onclick="fetchByGenre('mystery')">Mystery</button>
+	<button onclick="fetchByGenre('fantacy')">Fantacy</button>
+	<button onclick="fetchByGenre('romance')">Romance</button>
+	<button onclick="fetchByGenre('science')">Science</button>
+	<button onclick="fetchByGenre('history')">History</button>
+	<button onclick="fetchByGenre('horror')">Horror</button>
+	<br><br>
+	<button onclick="goToCheckout()">Go to Checkout</button>
+	<button onclick="goToUser()">User's books</button>
+
+	<div id="books"></div>
 </body>
+
 </html>
