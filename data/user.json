@@ -4,13 +4,22 @@
     "cart": [],
     "rentedBooks": [
       {
-        "id": "ogyWzQEACAAJ",
-        "title": "Dracula Illustrated",
+        "id": "BVdnzgEACAAJ",
+        "title": "Dracula",
         "author": "Bram Stoker",
-        "price": 21,
-        "img": "http://books.google.com/books/content?id=ogyWzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "price": 13,
+        "img": "http://books.google.com/books/content?id=BVdnzgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         "type": "rent",
-        "dueDate": "2025-04-30T19:24:51.608Z"
+        "dueDate": "2025-04-30T20:01:03.942Z"
+      },
+      {
+        "id": "apH-QFb7w5QC",
+        "title": "The Night Manager",
+        "author": "John Le Carré",
+        "price": 24,
+        "img": "http://books.google.com/books/content?id=apH-QFb7w5QC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "type": "rent",
+        "dueDate": "2025-04-30T20:01:03.942Z"
       }
     ],
     "purchasedBooks": [
@@ -36,6 +45,30 @@
         "author": "Albert Camus",
         "price": 16,
         "img": "http://books.google.com/books/content?id=KVGd-NabpW0C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "type": "buy"
+      },
+      {
+        "id": "bl3jzQEACAAJ",
+        "title": "Dubliners Illustrated",
+        "author": "James Joyce",
+        "price": 7,
+        "img": "http://books.google.com/books/content?id=bl3jzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "type": "buy"
+      },
+      {
+        "id": "xwSWzQEACAAJ",
+        "title": "The Picture of Dorian Gray Illustrated",
+        "author": "Oscar Wilde",
+        "price": 8,
+        "img": "http://books.google.com/books/content?id=xwSWzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        "type": "buy"
+      },
+      {
+        "id": "6YQ7s4N3A00C",
+        "title": "The Mystery of Edwin Drood",
+        "author": "Charles Dickens",
+        "price": 17,
+        "img": "http://books.google.com/books/content?id=6YQ7s4N3A00C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         "type": "buy"
       }
     ]

@@ -79,6 +79,7 @@ app.get('/api/user', (req, res) => {
 	res.json(userData);
 });
 
+//Get user's purchased and rented books
 app.get('/api/user/purchased', (req, res) => {
 	const userData = JSON.parse(fs.readFileSync(userFilePath, 'utf8'));
 	const purchasedBooks = userData.user.purchasedBooks || [];
@@ -260,8 +261,9 @@ app.get('/api/inventory/genre/:genre', (req, res) => {
 });
 
 //Initialize inventory on server start (Will only happen the first time the server runs)
-initializeInventory().then(() => {
-	app.listen(PORT, () => {
-		console.log(`Server running on http://localhost:${PORT}`);
-	});
+initializeInventory()
+
+app.listen(PORT, () => {
+	console.log(`Server running on http://localhost:${PORT}`);
 });
+

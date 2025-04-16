@@ -24,4 +24,8 @@ function goToIndex() {
 	window.location.href = 'index.html';
 }
 
+function goToPayment() {
+  window.location.href = 'payment.html';
+}
+
 fetchCart();
