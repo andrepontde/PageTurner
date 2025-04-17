@@ -124,6 +124,31 @@ app.get('/api/user/rented', (req, res) => {
 	res.json(rentedBooks);
 });
 
+// Route to add or update a review for a book
+app.put('/api/user/review', (req, res) => {
+	const { bookId, review } = req.body;
+
+	if (!bookId || !review) {
+		return res.status(400).json({ error: 'Book ID and review are required' });
+	}
+
+	const userData = JSON.parse(fs.readFileSync(userFilePath, 'utf8'));
+
+	// Check if the book exists in purchased or rented books
+	const book = userData.user.purchasedBooks.find(b => b.id === bookId) ||
+		userData.user.rentedBooks.find(b => b.id === bookId);
+
+	if (!book) {
+		return res.status(404).json({ error: 'Book not found in user data' });
+	}
+
+	// Add or update the review
+	book.review = review;
+
+	fs.writeFileSync(userFilePath, JSON.stringify(userData, null, 2));
+	res.json({ message: 'Review added/updated successfully', book });
+});
+
 //Add book to cart with type (rent or buy)
 app.post('/api/cart', (req, res) => {
 	const { book, type } = req.body; //`type` can be 'rent' or 'buy'
@@ -157,6 +182,11 @@ app.post('/api/cart', (req, res) => {
 //Checkout books (rent or buy)
 app.post('/api/checkout', (req, res) => {
 	const userData = JSON.parse(fs.readFileSync(userFilePath, 'utf8'));
+
+	if (userData.user.cart.length === 0) {
+		return res.status(500).json({ error: 'Cart is empty. Nothing to checkout.' });
+	}
+
 	const currentDate = new Date();
 	const dueDate = new Date();
 	dueDate.setDate(currentDate.getDate() + 14); // Set due date to 14 days from now
@@ -171,7 +201,7 @@ app.post('/api/checkout', (req, res) => {
 		}
 	});
 
-	userData.user.cart = []; //Clear the cart after checkout
+	userData.user.cart = []; // Clear the cart after checkout
 	fs.writeFileSync(userFilePath, JSON.stringify(userData, null, 2));
 	res.json(userData);
 });

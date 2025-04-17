@@ -22,8 +22,37 @@ function renderUserBooks(books, type) {
       <img src="${book.img}" alt="${book.title}" style="width: 128px; height: 192px; object-fit: cover;">
       <h3>${book.title}</h3>
       <p>${book.author}</p>
+      ${book.review 
+        ? `<p><strong>Review:</strong> ${book.review}</p><button onclick="editReview('${book.id}', '${book.review}')">Edit Review</button>` 
+        : `<button onclick="addReview('${book.id}')">Add Review</button>`}
     </div>
   `).join('');
+}
+
+async function addReview(bookId) {
+	const review = prompt('Enter your review:');
+	if (review) {
+		await fetch(`/api/user/review`, {
+			method: 'PUT',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ bookId, review })
+		});
+		alert('Review added successfully!');
+		fetchBooks(); // Refresh the books to show the updated review
+	}
+}
+
+async function editReview(bookId, currentReview) {
+	const review = prompt('Edit your review:', currentReview);
+	if (review && review !== currentReview) {
+		await fetch(`/api/user/review`, {
+			method: 'PUT',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ bookId, review })
+		});
+		alert('Review updated successfully!');
+		fetchBooks(); // Refresh the books to show the updated review
+	}
 }
 
 fetchBooks();

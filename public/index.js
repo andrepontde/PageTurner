@@ -32,6 +32,7 @@ async function addToCart(id, title, author, price, img, type) {
 		body: JSON.stringify({ book: { id, title, author, price, img }, type })
 	});
 	alert(`Book added to cart for ${type}!`);
+	fetchBooks();
 }
 
 //Render the books on the page (With a simple layout and styling)
