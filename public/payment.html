@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment</title>
-  <script defer src="payment.js"></script>
-  <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Payment</title>
+	<script defer src="payment.js"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>Payment Form</h1>
-  <form id="paymentForm">
-    <label for="cardNumber">Card Number:</label>
-    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required><br>
-    <label for="expiryDate">Expiry Date:</label>
-    <input type="text" id="expiryDate" placeholder="MM/YY" required><br>
-    <label for="cvv">CVV:</label>
-    <input type="text" id="cvv" placeholder="123" required><br>
-    <label for="cardHolder">Card Holder Name:</label>
-    <input type="text" id="cardHolder" placeholder="John Doe" required><br>
-    <button type="submit">Pay</button>
-  </form>
+	<nav>
+		<a href="index.html">Home</a>
+		<a href="checkout.html">Checkout</a>
+		<a href="returns.html">Returns</a>
+		<a href="user.html">User's Books</a>
+	</nav>
+	<h1>Payment Form</h1>
+	<form id="paymentForm">
+		<label for="cardNumber">Card Number:</label>
+		<input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required><br>
+		<label for="expiryDate">Expiry Date:</label>
+		<input type="text" id="expiryDate" placeholder="MM/YY" required><br>
+		<label for="cvv">CVV:</label>
+		<input type="text" id="cvv" placeholder="123" required><br>
+		<label for="cardHolder">Card Holder Name:</label>
+		<input type="text" id="cardHolder" placeholder="John Doe" required><br>
+		<button type="submit">Pay</button>
+	</form>
 </body>
+
 </html>

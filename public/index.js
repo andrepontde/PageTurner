@@ -39,7 +39,7 @@ function renderBooks(books) {
 	const booksDiv = document.getElementById('books');
 	booksDiv.innerHTML = books.map(book => `
     <div class="book">
-      <img src="${book.img}" alt="${book.title}" style="width: 128px; height: 192px; object-fit: cover;">
+      <img src="${book.img}" alt="${book.title}">
       <h3>${book.title}</h3>
       <p>${book.author}</p>
       <p>$${book.price}</p>

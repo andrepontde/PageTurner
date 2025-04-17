@@ -5,27 +5,19 @@ async function fetchCart() {
 	cartDiv.innerHTML = user.user.cart.map(book => `
     <div class="book">
       <h3>${book.title}</h3>
-      <p>${book.author}</p>
+           <img src="${book.img}" alt="${book.title}"> 
+	  <p>${book.author}</p>
       <p>$${book.price}</p>
     </div>
   `).join('');
 }
 
-async function checkout() {
-	await fetch('/api/checkout', { method: 'POST' });
-	alert('Checkout complete!');
-	fetchCart();
-}
-
-function goToReturns() {
-	window.location.href = 'returns.html';
-}
-function goToIndex() {
-	window.location.href = 'index.html';
-}
-
 function goToPayment() {
-  window.location.href = 'payment.html';
+  if (document.getElementById('cart').innerHTML === '') {
+    alert('Your cart is empty!');
+    return;
+  }
+	window.location.href = 'payment.html';
 }
 
 fetchCart();

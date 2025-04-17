@@ -1,9 +1,9 @@
 async function fetchRentedBooks() {
-  const response = await fetch('/api/user');
-  const userData = await response.json();
-  const rentedBooks = userData.user.rentedBooks || [];
-  const rentedBooksDiv = document.getElementById('rentedBooks');
-  rentedBooksDiv.innerHTML = rentedBooks.map(book => `
+	const response = await fetch('/api/user');
+	const userData = await response.json();
+	const rentedBooks = userData.user.rentedBooks || [];
+	const rentedBooksDiv = document.getElementById('rentedBooks');
+	rentedBooksDiv.innerHTML = rentedBooks.map(book => `
     <div class="book">
       <img src="${book.img}" alt="${book.title}" style="width: 128px; height: 192px; object-fit: cover;">
       <h3>${book.title}</h3>
@@ -15,22 +15,18 @@ async function fetchRentedBooks() {
 }
 
 async function returnBook(bookId) {
-  const response = await fetch('/api/returns', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ bookId })
-  });
-  const result = await response.json();
-  if (result.lateFee > 0) {
-    alert(`Book returned successfully. Late fee: $${result.lateFee}`);
-  } else {
-    alert('Book returned successfully. No late fee.');
-  }
-  fetchRentedBooks();
-}
-
-function goToSearch() {
-  window.location.href = 'index.html';
+	const response = await fetch('/api/returns', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ bookId })
+	});
+	const result = await response.json();
+	if (result.lateFee > 0) {
+		alert(`Book returned successfully. Late fee: $${result.lateFee}`);
+	} else {
+		alert('Book returned successfully. No late fee.');
+	}
+	fetchRentedBooks();
 }
 
 fetchRentedBooks();

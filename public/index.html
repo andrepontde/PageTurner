@@ -10,21 +10,25 @@
 </head>
 
 <body>
-	<h1>Book Search</h1>
+	<nav>
+		<a href="index.html">Home</a>
+		<a href="checkout.html">Checkout</a>
+		<a href="returns.html">Returns</a>
+		<a href="user.html">User's Books</a>
+	</nav>
+	<h1>PageTurner</h1> <h3>Book Search</h3>
 	<input type="text" id="searchInput" placeholder="Search for books">
 	<button onclick="searchBook()">Search books</button>
 	<br><br>
 	<!-- ['fiction', 'mystery', 'fantasy', 'romance', 'science', 'history', 'horror']; -->
 	<button onclick="fetchByGenre('fiction')">Fiction</button>
 	<button onclick="fetchByGenre('mystery')">Mystery</button>
-	<button onclick="fetchByGenre('fantacy')">Fantacy</button>
+	<button onclick="fetchByGenre('fantasy')">Fantasy</button>
 	<button onclick="fetchByGenre('romance')">Romance</button>
 	<button onclick="fetchByGenre('science')">Science</button>
 	<button onclick="fetchByGenre('history')">History</button>
 	<button onclick="fetchByGenre('horror')">Horror</button>
 	<br><br>
-	<button onclick="goToCheckout()">Go to Checkout</button>
-	<button onclick="goToUser()">User's books</button>
 
 	<div id="books"></div>
 </body>

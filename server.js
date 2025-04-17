@@ -41,6 +41,24 @@ async function initializeInventory() {
 	}
 }
 
+// Route to get all books by genre
+app.get('/api/inventory/genre/:genre', (req, res) => {
+	const genre = req.params.genre.toLowerCase();
+
+	if (!fs.existsSync(inventoryFilePath)) {
+		return res.status(500).json({ error: 'Inventory not initialized' });
+	}
+
+	const inventory = JSON.parse(fs.readFileSync(inventoryFilePath, 'utf8'));
+	const booksByGenre = inventory.filter(book => book.genre === genre);
+
+	if (booksByGenre.length === 0) {
+		return res.status(404).json({ error: `No books found for genre: ${genre}` });
+	}
+
+	res.json(booksByGenre);
+});
+
 // Get books from inventory
 app.get('/api/books', (req, res) => {
 	if (!fs.existsSync(inventoryFilePath)) {
@@ -242,23 +260,7 @@ app.get('/api/inventory/books', (req, res) => {
 	res.json(inventory); //Return every book
 });
 
-// Route to get all books by genre
-app.get('/api/inventory/genre/:genre', (req, res) => {
-	const genre = req.params.genre.toLowerCase();
 
-	if (!fs.existsSync(inventoryFilePath)) {
-		return res.status(500).json({ error: 'Inventory not initialized' });
-	}
-
-	const inventory = JSON.parse(fs.readFileSync(inventoryFilePath, 'utf8'));
-	const booksByGenre = inventory.filter(book => book.genre.toLowerCase() === genre);
-
-	if (booksByGenre.length === 0) {
-		return res.status(404).json({ error: `No books found for genre: ${genre}` });
-	}
-
-	res.json(booksByGenre);
-});
 
 //Initialize inventory on server start (Will only happen the first time the server runs)
 initializeInventory()

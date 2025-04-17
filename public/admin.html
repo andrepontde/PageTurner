@@ -1,45 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Page</title>
-  <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Page</title>
+	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>Admin Page</h1>
-  <h2>Manage Inventory</h2>
+	<nav>
+		<a href="index.html">Home</a>
+		<a href="checkout.html">Checkout</a>
+		<a href="returns.html">Returns</a>
+		<a href="user.html">User's Books</a>
+	</nav>
 
-  <!-- Add Book Form -->
-  <form id="addBookForm">
-    <h3>Add New Book</h3>
-    <input type="text" id="addId" placeholder="Book ID" required>
-    <input type="text" id="addTitle" placeholder="Title" required>
-    <input type="text" id="addAuthor" placeholder="Author" required>
-    <input type="number" id="addPrice" placeholder="Price" required>
-    <input type="text" id="addImg" placeholder="Image URL" required>
-    <input type="text" id="addGenre" placeholder="Genre" required>
-    <button type="submit">Add Book</button>
-  </form>
+	<h1>Admin Page</h1>
+	<h2>Manage Inventory</h2>
 
-  <!-- Inventory Table -->
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Price</th>
-        <th>Image</th>
-        <th>Genre</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody id="inventoryTableBody">
+	<!-- Add Book Form -->
+	<form id="addBookForm">
+		<h3>Add New Book</h3>
+		<input type="text" id="addId" placeholder="Book ID" required>
+		<input type="text" id="addTitle" placeholder="Title" required>
+		<input type="text" id="addAuthor" placeholder="Author" required>
+		<input type="number" id="addPrice" placeholder="Price" required>
+		<input type="text" id="addImg" placeholder="Image URL" required>
+		<input type="text" id="addGenre" placeholder="Genre" required>
+		<button type="submit">Add Book</button>
+	</form>
 
-    </tbody>
-  </table>
+	<!-- Inventory Table -->
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Price</th>
+				<th>Image</th>
+				<th>Genre</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody id="inventoryTableBody">
 
-  <script src="admin.js"></script>
+		</tbody>
+	</table>
+
+	<script src="admin.js"></script>
 </body>
+
 </html>

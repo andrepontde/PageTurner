@@ -1,20 +1,131 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #444;
+    text-align: center;
+}
+
+/* Buttons */
+button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Forms */
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #ccc; 
+    font-size: 14px;
+}
+
+/* Book cards */
 .book {
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
     display: inline-block;
     text-align: center;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    height: 360px;
 }
+
+.book img {
+    width: 128px;
+    height: 192px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.book h3 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.book p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Book container for grid layout */
+#books, #purchasedBooks, #rentedBooks {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 books per row */
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-  }
-  th, td {
-    border: 1px solid black;
-    padding: 8px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
     text-align: left;
-  }
-  form {
-    margin-bottom: 20px;
-  }
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+td img {
+    width: 50px;
+    height: auto;
+}
+
+/* Centered content */
+.center {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Navbar */
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
