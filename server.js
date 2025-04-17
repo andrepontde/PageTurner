@@ -41,6 +41,21 @@ async function initializeInventory() {
 	}
 }
 
+// Function to initialize user data
+function initializeUserData() {
+	if (!fs.existsSync(userFilePath)) {
+		const initialUserData = {
+			user: {
+				cart: [],
+				purchasedBooks: [],
+				rentedBooks: []
+			}
+		};
+		fs.writeFileSync(userFilePath, JSON.stringify(initialUserData, null, 2));
+		console.log('User data initialized.');
+	}
+}
+
 // Route to get all books by genre
 app.get('/api/inventory/genre/:genre', (req, res) => {
 	const genre = req.params.genre.toLowerCase();
@@ -262,8 +277,9 @@ app.get('/api/inventory/books', (req, res) => {
 
 
 
-//Initialize inventory on server start (Will only happen the first time the server runs)
-initializeInventory()
+//Initialize inventory and user data on server start
+initializeInventory();
+initializeUserData();
 
 app.listen(PORT, () => {
 	console.log(`Server running on http://localhost:${PORT}`);

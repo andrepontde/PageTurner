@@ -1,0 +1,1 @@
+This document prevents the deletion of /data, which is needed for the user and inventory JSON files 
